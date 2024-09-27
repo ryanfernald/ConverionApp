@@ -11,29 +11,29 @@ class ConversionApp:
         self.to_var = tk.StringVar(master)
 
         # Sample options for conversion
-        self.options = ["Kilometers", "Miles", "Celsius", "Fahrenheit", "Kelvin"]
+        self.options = ["Kilometers", "Meters", "Centimeters", "Millimeters","Miles", "Yards", "Feet", "Inches", "Celsius", "Fahrenheit", "Kelvin"]
 
         # Grid layout for dropdown menus
         self.from_menu = tk.OptionMenu(master, self.from_var, *self.options)
-        self.from_menu.config(font=('Arial', 14), width=15)
+        self.from_menu.config(font=('Comfortaa', 14), width=15)
         self.from_menu.grid(row=0, column=0, padx=10, pady=10)
 
-        tk.Label(master, text="TO", font=('Arial', 14)).grid(row=0, column=1, padx=10, pady=10)
+        tk.Label(master, text="TO", font=('Comfortaa', 14)).grid(row=0, column=1, padx=10, pady=10)
 
         self.to_menu = tk.OptionMenu(master, self.to_var, *self.options)
-        self.to_menu.config(font=('Arial', 14), width=15)
+        self.to_menu.config(font=('Comfortaa', 14), width=15)
         self.to_menu.grid(row=0, column=2, padx=10, pady=10)
 
         # Input text box
-        self.input_value = tk.Entry(master, font=('Arial', 14), width=20)
+        self.input_value = tk.Entry(master, font=('Comfortaa', 14, "bold"), width=20)
         self.input_value.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
         # Return to Convert label
-        self.return_label = tk.Label(master, text="Return to Convert", font=('Arial', 14))
+        self.return_label = tk.Label(master, text="Return to Convert", font=('Comfortaa', 14))
         self.return_label.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
 
         # Result label
-        self.result_label = tk.Label(master, text="", font=('Arial', 14))
+        self.result_label = tk.Label(master, text="", font=('Comfortaa', 14, "bold"))
         self.result_label.grid(row=3, column=0, columnspan=3, padx=10, pady=10)
 
         # Bind the Enter key to perform conversion
@@ -48,7 +48,7 @@ class ConversionApp:
             from_unit = self.from_var.get()
             to_unit = self.to_var.get()
             result = convert(value, from_unit, to_unit)
-            self.result_label.config(text=f"Result: {result:.3f}")
+            self.result_label.config(text=f"Result: {value} {from_unit}, is {result:.5f} {to_unit}")
             self.input_value.delete(0, tk.END)  # Clear input after conversion
             self.input_value.focus_set()  # Set focus back to input box
         except ValueError:
