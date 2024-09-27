@@ -2,8 +2,14 @@
 
 from .metric_imperial_conv import *
 from .temp_conv import *
+from .weight_conv import *
 
 def convert(value, from_unit, to_unit):
+
+    ################################################################################
+    #################################### Distance ##################################
+    ################################################################################
+
     # Kilometers conversions
     if from_unit == "Kilometers" and to_unit == "Meters":
         return kilometers_to_meters(value)
@@ -141,6 +147,22 @@ def convert(value, from_unit, to_unit):
         return celsius_to_kelvin(value)
     elif from_unit == "Kelvin" and to_unit == "Celsius":
         return kelvin_to_celsius(value)
+    elif from_unit == "Fahrenheit" and to_unit == "Kelvin":
+        return kelvin_to_celsius(value)
+    elif from_unit == "Kelvin" and to_unit == "Fahrenheit":
+        return kelvin_to_celsius(value)
 
+    ################################################################################
+    #################################### Weight ####################################
+    ################################################################################
+
+    # Kilograms
+    elif from_unit == "Kilograms" and to_unit == "Pounds":
+        return kilograms_to_pounds(value)
+    
+    # Pounds 
+    elif from_unit == "Pounds" and to_unit == "Kilograms":
+        return pounds_to_kilograms(value)
+    
     else:
         return "Conversion not supported."

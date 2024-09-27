@@ -177,12 +177,3 @@ def inches_to_yards(inches):
 
 def inches_to_feet(inches):
     return inches / 12
-
-
-############ WEIGHT ############
-
-def kilograms_to_pounds(kilograms):
-    return kilograms * 2.20462
-
-def pounds_to_kilograms(pounds):
-    return pounds / 2.20462
