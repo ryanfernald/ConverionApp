@@ -138,7 +138,10 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Inches" and to_unit == "Feet":
         return inches_to_feet(value)
 
-    # Temperature conversions (already provided)
+    ################################################################################
+    ################################# Temperature ##################################
+    ################################################################################
+
     elif from_unit == "Celsius" and to_unit == "Fahrenheit":
         return celsius_to_fahrenheit(value)
     elif from_unit == "Fahrenheit" and to_unit == "Celsius":
@@ -156,13 +159,77 @@ def convert(value, from_unit, to_unit):
     #################################### Weight ####################################
     ################################################################################
 
-    # Kilograms
+# Metric Ton
+    elif from_unit == "Tons" and to_unit == "Kilograms":
+        return ton_to_kilogram(value)
+    elif from_unit == "Tons" and to_unit == "Grams":
+        return ton_to_gram(value)
+    elif from_unit == "Tons" and to_unit == "Milligrams":
+        return ton_to_milligram(value)
+    elif from_unit == "Tons" and to_unit == "Pounds":
+        return ton_to_pound(value)
+    elif from_unit == "Tons" and to_unit == "Ounces":
+        return ton_to_ounces(value)
+
+# Kilograms
+    elif from_unit == "Kilograms" and to_unit == "Tons":
+        return kilograms_to_ton(value)
+    elif from_unit == "Kilograms" and to_unit == "Grams":
+        return kilograms_to_gram(value)
+    elif from_unit == "Kilograms" and to_unit == "Milligrams":
+        return kilograms_to_milligram(value)
     elif from_unit == "Kilograms" and to_unit == "Pounds":
         return kilograms_to_pounds(value)
-    
-    # Pounds 
+    elif from_unit == "Kilograms" and to_unit == "Ounces":
+        return kilograms_to_ounce(value)
+
+# Grams
+    elif from_unit == "Grams" and to_unit == "Tons":
+        return grams_to_ton(value)
+    elif from_unit == "Grams" and to_unit == "Kilograms":
+        return grams_to_kilogram(value)
+    elif from_unit == "Grams" and to_unit == "Milligrams":
+        return grams_to_milligram(value)
+    elif from_unit == "Grams" and to_unit == "Pounds":
+        return grams_to_pounds(value)
+    elif from_unit == "Grams" and to_unit == "Ounces":
+        return grams_to_ounce(value)
+
+# Milligrams
+    elif from_unit == "Milligrams" and to_unit == "Tons":
+        return miligrams_to_ton(value)
+    elif from_unit == "Milligrams" and to_unit == "Kilograms":
+        return miligrams_to_kilogram(value)
+    elif from_unit == "Milligrams" and to_unit == "Grams":
+        return miligrams_to_gram(value)
+    elif from_unit == "Milligrams" and to_unit == "Pounds":
+        return miligrams_to_pounds(value)
+    elif from_unit == "Milligrams" and to_unit == "Ounces":
+        return miligrams_to_ounce(value)
+
+# Pounds
+    elif from_unit == "Pounds" and to_unit == "Tons":
+        return pounds_to_ton(value)
     elif from_unit == "Pounds" and to_unit == "Kilograms":
-        return pounds_to_kilograms(value)
+        return pounds_to_kilogram(value)
+    elif from_unit == "Pounds" and to_unit == "Grams":
+        return pounds_to_gram(value)
+    elif from_unit == "Pounds" and to_unit == "Milligrams":
+        return pounds_to_miligrams(value)
+    elif from_unit == "Pounds" and to_unit == "Ounces":
+        return pounds_to_ounces(value)
+
+# Ounces
+    elif from_unit == "Ounces" and to_unit == "Tons":
+        return ounce_to_tons(value)
+    elif from_unit == "Ounces" and to_unit == "Kilograms":
+        return ounce_to_kilogram(value)
+    elif from_unit == "Ounces" and to_unit == "Grams":
+        return ounce_to_grams(value)
+    elif from_unit == "Ounces" and to_unit == "Milligrams":
+        return ounce_to_miligrams(value)
+    elif from_unit == "Ounces" and to_unit == "Pounds":
+        return ounce_to_poounds(value)
     
     else:
         return "Conversion not supported."
