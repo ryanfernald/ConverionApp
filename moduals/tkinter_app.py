@@ -11,7 +11,8 @@ class ConversionApp:
         self.categories = {
             "Distance": ["Kilometers", "Meters", "Centimeters", "Millimeters", "Miles", "Yards", "Feet", "Inches"],
             "Temperature": ["Celsius", "Fahrenheit", "Kelvin"],
-            "Weight" : ["Kilograms", "Grams", "Miligrams", "Pounds", "Ounces"]
+            "Weight" : ["Kilograms", "Grams", "Miligrams", "Pounds", "Ounces"],
+            "FLuid Volume" : ["Liter", "Milliliter", "Gallon", "Quart", "Pint", "Cup", "Fluid Ounce", "Tablespoon", "Teaspoon"]
         }
 
         self.category_var = tk.StringVar(master)
@@ -34,10 +35,11 @@ class ConversionApp:
         self.to_menu.config(font=('Comfortaa', 14), width=15)
         self.to_menu.grid(row=1, column=2, padx=10, pady=10)
 
-        # Other widgets...
+        # Input box
         self.input_value = tk.Entry(master, font=('Comfortaa', 14, "bold"), width=20)
         self.input_value.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
 
+        # Text
         self.result_label = tk.Label(master, text="Return to convert", font=('Comfortaa', 14, "bold"))
         self.result_label.grid(row=4, column=0, columnspan=3, padx=10, pady=10)
 
@@ -48,6 +50,12 @@ class ConversionApp:
         self.topmost_checkbox = tk.Checkbutton(master, text="Float", font=('Comfortaa', 10),
                                                variable=self.topmost_var, command=self.toggle_topmost)
         self.topmost_checkbox.grid(row=5, column=2, sticky='e', padx=10, pady=10)
+
+        # Create a Checkbox for "Auto Copy" feature
+        self.auto_copy_var = tk.BooleanVar(value=False)
+        self.auto_copy_checkbox = tk.Checkbutton(master, text="Auto Copy", font=('Comfortaa', 10),
+                                                  variable=self.auto_copy_var)
+        self.auto_copy_checkbox.grid(row=5, column=2, sticky='w', padx=10, pady=10)
 
         # Create a "Copy" button in grid row=5, column=1
         self.copy_button = tk.Button(master, text="Copy", font=('Comfortaa', 10), command=self.copy_to_clipboard)
@@ -89,6 +97,10 @@ class ConversionApp:
             self.result_label.config(text=f"Result: {value} {from_unit}, is {self.result} {to_unit}")
             self.input_value.delete(0, tk.END)  # Clear input after conversion
             self.input_value.focus_set()  # Set focus back to input box
+
+            if self.auto_copy_var.get():
+                self.copy_to_clipboard()
+            
         except ValueError:
             self.result_label.config(text="Please enter a valid number.")
             self.input_value.focus_set()  # Ensure focus is on input box for new input

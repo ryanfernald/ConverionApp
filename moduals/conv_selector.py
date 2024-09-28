@@ -3,6 +3,7 @@
 from .metric_imperial_conv import *
 from .temp_conv import *
 from .weight_conv import *
+from .volume_conv import *
 
 def convert(value, from_unit, to_unit):
 
@@ -10,7 +11,7 @@ def convert(value, from_unit, to_unit):
     #################################### Distance ##################################
     ################################################################################
 
-    # Kilometers conversions
+# Kilometers conversions
     if from_unit == "Kilometers" and to_unit == "Meters":
         return kilometers_to_meters(value)
     elif from_unit == "Kilometers" and to_unit == "Centimeters":
@@ -26,7 +27,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Kilometers" and to_unit == "Inches":
         return kilometers_to_inches(value)
 
-    # Meters conversions
+# Meters conversions
     elif from_unit == "Meters" and to_unit == "Kilometers":
         return meters_to_kilometers(value)
     elif from_unit == "Meters" and to_unit == "Centimeters":
@@ -42,7 +43,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Meters" and to_unit == "Inches":
         return meters_to_inches(value)
 
-    # Centimeters conversions
+# Centimeters conversions
     elif from_unit == "Centimeters" and to_unit == "Kilometers":
         return centimeters_to_kilometers(value)
     elif from_unit == "Centimeters" and to_unit == "Meters":
@@ -58,7 +59,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Centimeters" and to_unit == "Inches":
         return centimeters_to_inches(value)
 
-    # Millimeters conversions
+# Millimeters conversions
     elif from_unit == "Millimeters" and to_unit == "Kilometers":
         return millimeters_to_kilometers(value)
     elif from_unit == "Millimeters" and to_unit == "Meters":
@@ -74,7 +75,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Millimeters" and to_unit == "Inches":
         return millimeters_to_inches(value)
 
-    # Miles conversions
+# Miles conversions
     elif from_unit == "Miles" and to_unit == "Kilometers":
         return miles_to_kilometers(value)
     elif from_unit == "Miles" and to_unit == "Meters":
@@ -90,7 +91,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Miles" and to_unit == "Inches":
         return miles_to_inches(value)
 
-    # Yards conversions
+# Yards conversions
     elif from_unit == "Yards" and to_unit == "Kilometers":
         return yards_to_kilometers(value)
     elif from_unit == "Yards" and to_unit == "Meters":
@@ -106,7 +107,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Yards" and to_unit == "Inches":
         return yards_to_inches(value)
 
-    # Feet conversions
+# Feet conversions
     elif from_unit == "Feet" and to_unit == "Kilometers":
         return feet_to_kilometers(value)
     elif from_unit == "Feet" and to_unit == "Meters":
@@ -122,7 +123,7 @@ def convert(value, from_unit, to_unit):
     elif from_unit == "Feet" and to_unit == "Inches":
         return feet_to_inches(value)
 
-    # Inches conversions
+# Inches conversions
     elif from_unit == "Inches" and to_unit == "Kilometers":
         return inches_to_kilometers(value)
     elif from_unit == "Inches" and to_unit == "Meters":
@@ -230,6 +231,172 @@ def convert(value, from_unit, to_unit):
         return ounce_to_miligrams(value)
     elif from_unit == "Ounces" and to_unit == "Pounds":
         return ounce_to_poounds(value)
+    
+    ################################################################################
+    ############################## Fluid Volume ####################################
+    ################################################################################
+    
+# Liter to conversions
+    elif from_unit == "Liter" and to_unit == "Milliliter":
+        return liter_to_millileter(value)
+    elif from_unit == "Liter" and to_unit == "Gallon":
+        return liter_to_gallon(value)
+    elif from_unit == "Liter" and to_unit == "Quart":
+        return liter_to_quart(value)
+    elif from_unit == "Liter" and to_unit == "Pint":
+        return liter_to_pint(value)
+    elif from_unit == "Liter" and to_unit == "Cup":
+        return liter_to_cup(value)
+    elif from_unit == "Liter" and to_unit == "Fluid Ounce":
+        return liter_to_floz(value)
+    elif from_unit == "Liter" and to_unit == "Tablespoon":
+        return liter_to_tbsp(value)
+    elif from_unit == "Liter" and to_unit == "Teaspoon":
+        return liter_to_tsp(value)
+    
+# Milliliter to conversions
+    elif from_unit == "Milliliter" and to_unit == "Liter":
+        return milliliter_to_liter(value)
+    elif from_unit == "Milliliter" and to_unit == "Gallon":
+        return milliliter_to_gallon(value)
+    elif from_unit == "Milliliter" and to_unit == "Quart":
+        return milliliter_to_quart(value)
+    elif from_unit == "Milliliter" and to_unit == "Pint":
+        return milliliter_to_pint(value)
+    elif from_unit == "Milliliter" and to_unit == "Cup":
+        return milliliter_to_cup(value)
+    elif from_unit == "Milliliter" and to_unit == "Fluid Ounce":
+        return milliliter_to_floz(value)
+    elif from_unit == "Milliliter" and to_unit == "Tablespoon":
+        return milliliter_to_tbsp(value)
+    elif from_unit == "Milliliter" and to_unit == "Teaspoon":
+        return milliliter_to_tsp(value)
+    
+# Gallon to conversions
+    elif from_unit == "Gallon" and to_unit == "Liter":
+        return gallon_to_liter(value)
+    elif from_unit == "Gallon" and to_unit == "Milliliter":
+        return gallon_to_milliliter(value)
+    elif from_unit == "Gallon" and to_unit == "Quart":
+        return gallon_to_quart(value)
+    elif from_unit == "Gallon" and to_unit == "Pint":
+        return gallon_to_pint(value)
+    elif from_unit == "Gallon" and to_unit == "Cup":
+        return gallon_to_cup(value)
+    elif from_unit == "Gallon" and to_unit == "Fluid Ounce":
+        return gallon_to_floz(value)
+    elif from_unit == "Gallon" and to_unit == "Tablespoon":
+        return gallon_to_tbsp(value)
+    elif from_unit == "Gallon" and to_unit == "Teaspoon":
+        return gallon_to_tsp(value)
+    
+# Quart to conversions
+    elif from_unit == "Quart" and to_unit == "Liter":
+        return quart_to_liter(value)
+    elif from_unit == "Quart" and to_unit == "Milliliter":
+        return quart_to_milliliter(value)
+    elif from_unit == "Quart" and to_unit == "Gallon":
+        return quart_to_gallon(value)
+    elif from_unit == "Quart" and to_unit == "Pint":
+        return quart_to_pint(value)
+    elif from_unit == "Quart" and to_unit == "Cup":
+        return quart_to_cup(value)
+    elif from_unit == "Quart" and to_unit == "Fluid Ounce":
+        return quart_to_floz(value)
+    elif from_unit == "Quart" and to_unit == "Tablespoon":
+        return quart_to_tbsp(value)
+    elif from_unit == "Quart" and to_unit == "Teaspoon":
+        return quart_to_tsp(value)
+
+# Pint to conversions
+    elif from_unit == "Pint" and to_unit == "Liter":
+        return pint_to_liter(value)
+    elif from_unit == "Pint" and to_unit == "Milliliter":
+        return pint_to_milliliter(value)
+    elif from_unit == "Pint" and to_unit == "Gallon":
+        return pint_to_gallon(value)
+    elif from_unit == "Pint" and to_unit == "Quart":
+        return pint_to_quart(value)
+    elif from_unit == "Pint" and to_unit == "Cup":
+        return pint_to_cup(value)
+    elif from_unit == "Pint" and to_unit == "Fluid Ounce":
+        return pint_to_floz(value)
+    elif from_unit == "Pint" and to_unit == "Tablespoon":
+        return pint_to_tbsp(value)
+    elif from_unit == "Pint" and to_unit == "Teaspoon":
+        return pint_to_tsp(value)
+
+# Cup to conversions
+    elif from_unit == "Cup" and to_unit == "Liter":
+        return cup_to_liter(value)
+    elif from_unit == "Cup" and to_unit == "Milliliter":
+        return cup_to_milliliter(value)
+    elif from_unit == "Cup" and to_unit == "Gallon":
+        return cup_to_gallon(value)
+    elif from_unit == "Cup" and to_unit == "Quart":
+        return cup_to_quart(value)
+    elif from_unit == "Cup" and to_unit == "Pint":
+        return cup_to_pint(value)
+    elif from_unit == "Cup" and to_unit == "Fluid Ounce":
+        return cup_to_floz(value)
+    elif from_unit == "Cup" and to_unit == "Tablespoon":
+        return cup_to_tbsp(value)
+    elif from_unit == "Cup" and to_unit == "Teaspoon":
+        return cup_to_tsp(value)
+
+# Fluid Ounce (floz) to conversions
+    elif from_unit == "Fluid Ounce" and to_unit == "Liter":
+        return floz_to_liter(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Milliliter":
+        return floz_to_milliliter(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Gallon":
+        return floz_to_gallon(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Quart":
+        return floz_to_quart(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Pint":
+        return floz_to_pint(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Cup":
+        return floz_to_cup(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Tablespoon":
+        return floz_to_tbsp(value)
+    elif from_unit == "Fluid Ounce" and to_unit == "Teaspoon":
+        return floz_to_tsp(value)
+
+# Tablespoon (tbsp) to conversions
+    elif from_unit == "Tablespoon" and to_unit == "Liter":
+        return tbsp_to_liter(value)
+    elif from_unit == "Tablespoon" and to_unit == "Milliliter":
+        return tbsp_to_milliliter(value)
+    elif from_unit == "Tablespoon" and to_unit == "Gallon":
+        return tbsp_to_gallon(value)
+    elif from_unit == "Tablespoon" and to_unit == "Quart":
+        return tbsp_to_quart(value)
+    elif from_unit == "Tablespoon" and to_unit == "Pint":
+        return tbsp_to_pint(value)
+    elif from_unit == "Tablespoon" and to_unit == "Cup":
+        return tbsp_to_cup(value)
+    elif from_unit == "Tablespoon" and to_unit == "Fluid Ounce":
+        return tbsp_to_floz(value)
+    elif from_unit == "Tablespoon" and to_unit == "Teaspoon":
+        return tbsp_to_tsp(value)
+
+# Teaspoon (tsp) to conversions
+    elif from_unit == "Teaspoon" and to_unit == "Liter":
+        return tsp_to_liter(value)
+    elif from_unit == "Teaspoon" and to_unit == "Milliliter":
+        return tsp_to_milliliter(value)
+    elif from_unit == "Teaspoon" and to_unit == "Gallon":
+        return tsp_to_gallon(value)
+    elif from_unit == "Teaspoon" and to_unit == "Quart":
+        return tsp_to_quart(value)
+    elif from_unit == "Teaspoon" and to_unit == "Pint":
+        return tsp_to_pint(value)
+    elif from_unit == "Teaspoon" and to_unit == "Cup":
+        return tsp_to_cup(value)
+    elif from_unit == "Teaspoon" and to_unit == "Fluid Ounce":
+        return tsp_to_floz(value)
+    elif from_unit == "Teaspoon" and to_unit == "Tablespoon":
+        return tsp_to_tbsp(value)
     
     else:
         return "Conversion not supported."
