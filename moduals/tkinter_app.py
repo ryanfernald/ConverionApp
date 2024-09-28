@@ -43,8 +43,19 @@ class ConversionApp:
 
         self.input_value.bind('<Return>', self.perform_conversion_with_enter)
 
+       # Create a Checkbox for "Always on Top" feature
+        self.topmost_var = tk.BooleanVar(value=True)
+        self.topmost_checkbox = tk.Checkbutton(master, text="Float", font=('Comfortaa', 10),
+                                               variable=self.topmost_var, command=self.toggle_topmost)
+        self.topmost_checkbox.grid(row=5, column=2, sticky='e', padx=10, pady=10)
+
+        # Create a "Copy" button in grid row=5, column=1
+        self.copy_button = tk.Button(master, text="Copy", font=('Comfortaa', 10), command=self.copy_to_clipboard)
+        self.copy_button.grid(row=5, column=1, padx=10, pady=10)
+
+        # Set background color
         master.configure(bg="lavender")
-        master.attributes('-topmost', True)
+        self.toggle_topmost()  # Set initial topmost state
 
         # Update immediately if running on macOS
         if platform.system() == 'Darwin':  # Mac-specific tweaks
@@ -74,13 +85,25 @@ class ConversionApp:
             value = float(self.input_value.get())
             from_unit = self.from_var.get()
             to_unit = self.to_var.get()
-            result = convert(value, from_unit, to_unit)
-            self.result_label.config(text=f"Result: {value} {from_unit}, is {result:.5f} {to_unit}")
+            self.result = convert(value, from_unit, to_unit)
+            self.result_label.config(text=f"Result: {value} {from_unit}, is {self.result} {to_unit}")
             self.input_value.delete(0, tk.END)  # Clear input after conversion
             self.input_value.focus_set()  # Set focus back to input box
         except ValueError:
             self.result_label.config(text="Please enter a valid number.")
             self.input_value.focus_set()  # Ensure focus is on input box for new input
+    
+    def toggle_topmost(self):
+        """Toggle the 'Always on Top' window attribute."""
+        is_topmost = self.topmost_var.get()
+        self.master.attributes('-topmost', is_topmost)
+
+    # Method to copy the result to the clipboard
+    def copy_to_clipboard(self):
+        if self.result is not None:
+            self.master.clipboard_clear()
+            self.master.clipboard_append(str(self.result))
+            self.master.update()
 
 if __name__ == "__main__":
     root = tk.Tk()
