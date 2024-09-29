@@ -11,8 +11,8 @@ class ConversionApp:
         self.categories = {
             "Distance": ["Kilometers", "Meters", "Centimeters", "Millimeters", "Miles", "Yards", "Feet", "Inches"],
             "Temperature": ["Celsius", "Fahrenheit", "Kelvin"],
-            "Weight" : ["Kilograms", "Grams", "Miligrams", "Pounds", "Ounces"],
-            "FLuid Volume" : ["Liter", "Milliliter", "Gallon", "Quart", "Pint", "Cup", "Fluid Ounce", "Tablespoon", "Teaspoon"]
+            "Weight" : ["Kilograms", "Grams", "Milligrams", "Pounds", "Ounces"],
+            "Fluid Volume" : ["Liter", "Milliliter", "Gallon", "Quart", "Pint", "Cup", "Fluid Ounce", "Tablespoon", "Teaspoon"]
         }
 
         self.category_var = tk.StringVar(master)
