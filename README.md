@@ -10,6 +10,9 @@
 - **Auto Copy:** Automatically copy the converted value to your clipboard as soon as it's calculated.
 - **Float on Top:** Keep the converter window always visible on top of other applications.
 ---
+## To Run: 
+Run the exe file in dist folder.
+---
 ![image_2024-09-28_181733341](https://github.com/user-attachments/assets/9a29bdb1-764f-4263-8794-eaa3686d53c8)
 
 ![image_2024-09-28_182455466](https://github.com/user-attachments/assets/ae17e485-bbbb-4ba3-a2b6-cf0047ebc5e2)
