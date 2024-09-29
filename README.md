@@ -11,7 +11,8 @@
 - **Float on Top:** Keep the converter window always visible on top of other applications.
 ---
 ## To Run: 
-Run the exe file in dist folder.
+
+> Run the main.exe file in dist folder.
 ---
 ![image_2024-09-28_181733341](https://github.com/user-attachments/assets/9a29bdb1-764f-4263-8794-eaa3686d53c8)
 
